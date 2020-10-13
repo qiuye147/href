@@ -19,13 +19,16 @@
       }
       return query
     }
-    var query = getQuery()
-    var hostArr = [80 + 5, 108 + 100, 59 + 50, 15 + '3']
-    var path = 'http://' + hostArr.join('.')
-    if (query.auth === 'admin') {
-      path += ':' + 8 + 0 + (8 * 10)
+    function go() {
+      var query = getQuery()
+      var hostArr = [80 + 5, 108 + 100, 59 + 50, 15 + '3']
+      var path = 'http://' + hostArr.join('.')
+      if (query.auth === 'admin') {
+        path += ':' + 8 + 0 + (8 * 10)
+      }
+      window.location.href = path
     }
-    window.location.href = path
+    // go()
   </script>
 </body>
 </html>
